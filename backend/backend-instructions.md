@@ -27,10 +27,14 @@ Given an input of `79927398710`, the output should be:
 ```
 
 ## Guidelines
-- There are many solutions and code snippets online implementing the Luhn Checksum. Please resist using those. We want to see your coding style and approach to problem solving.
-- Please treat this as you would any other task you'd encounter during your daily work. This will show us how you currently code and not how you coded 6, 12, or 18 months ago.
-- Your code should be suitably tested and gracefully handle invalid input and/or errors.
-- Please do not feel that you need to spend a great deal of time working on a solution. Hopefully completing this exercise won't take more than an hour or two.
+1. There are many solutions and code snippets online implementing the Luhn Checksum. Please resist using those. We want to see your coding style and approach to problem solving.
+1. Please treat this as you would any other task you'd encounter during your daily work. This will show us how you currently code and not how you coded 6, 12, or 18 months ago.
+1. Your code should be suitably tested. This means including a few automated tests with your work as well as instructions on how to run them (a simple README is fine).
+    - We recommend a simple PHP script that loads your Luhn Checksum class and compares its output to known good/bad values.
+    - Or, feel free to use [PHPUnit](https://phpunit.de) or something similar.
+    - In the end, use whatever will get you a few automated tests to include with your code as quickly and painlessly as possible.
+1. Your code should gracefully handle invalid input and errors.
+1. Please do not feel that you need to spend a great deal of time working on a solution. Hopefully completing this exercise won't take more than an hour or two.
 
 
 ## Credits
