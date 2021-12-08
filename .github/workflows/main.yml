@@ -34,6 +34,7 @@ jobs:
         with:
           # Required, playbook filepath
           playbook: playbook.yml
+          sudo: true
           # Optional, directory where playbooks live
           directory: ./devops-task
           # Optional, SSH private key
