@@ -20,28 +20,27 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-- name: install ansible
-  run: |
-    sudo apt update
-    sudo apt install software-properties-common
-    sudo add-apt-repository --yes --update ppa:ansible/ansible
-    sudo apt install ansible
+      - name: install ansible
+        run: |
+          sudo apt update
+          sudo apt install software-properties-common
+          sudo add-apt-repository --yes --update ppa:ansible/ansible
+          sudo apt install ansible
 
-- name: Run playbook
-  uses: dawidd6/action-ansible-playbook@v2
-  with:
-    # Required, playbook filepath
-    playbook: playbook.yml
-    # Optional, directory where playbooks live
-    directory: ./devops-task
-    # Optional, SSH private key
-    key: ${{secrets.SSH_PRIVATE_KEY}}
-    # Optional, literal inventory file contents
-    inventory: |
-      [all]
-      13.233.236.101
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          # Required, playbook filepath
+          playbook: playbook.yml
+          # Optional, directory where playbooks live
+          directory: ./devops-task
+          # Optional, SSH private key
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          # Optional, literal inventory file contents
+          inventory: |
+            [all]
+            13.233.236.101
 
-    # Optional, galaxy requirements filepath
-    requirements: galaxy-requirements.yml
-    # Optional, additional flags to pass to ansible-playbook
-    
+          # Optional, galaxy requirements filepath
+          requirements: galaxy-requirements.yml
+          # Optional, additional flags to pass to ansible-playbook
