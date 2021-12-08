@@ -15,5 +15,5 @@ tasks:
   - name: "Ansible copy file to remote server" 
     copy: 
       dest: /var/www/http
-      src: interview/devops-task/src
+      src: interview/devops-task/src 
     
