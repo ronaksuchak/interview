@@ -1,10 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
-name: php_on_azure
-
-# Controls when the workflow will run
+name: CI
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
   pull_request:
@@ -25,17 +20,28 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
-      - name: update
-        run: sudo apt update && sudo apt upgrade
+- name: install ansible
+  run: |
+    sudo apt update
+    sudo apt install software-properties-common
+    sudo add-apt-repository --yes --update ppa:ansible/ansible
+    sudo apt install ansible
 
-      # Runs a set of commands using the runners shell
-      - name: install apache2
-        run: sudo apt install apache2      
+- name: Run playbook
+  uses: dawidd6/action-ansible-playbook@v2
+  with:
+    # Required, playbook filepath
+    playbook: playbook.yml
+    # Optional, directory where playbooks live
+    directory: ./devops-task
+    # Optional, SSH private key
+    key: ${{secrets.SSH_PRIVATE_KEY}}
+    # Optional, literal inventory file contents
+    inventory: |
+      [all]
+      13.233.236.101
 
-      # Runs a set of commands using the runners shell
-      - name: copy files to /var/www/html
-        run: cp interview/devops-tasks/src /var/www/html
-        
-      - name: restart web server
-        run: sudo systemctl restart apache2
+    # Optional, galaxy requirements filepath
+    requirements: galaxy-requirements.yml
+    # Optional, additional flags to pass to ansible-playbook
+    
