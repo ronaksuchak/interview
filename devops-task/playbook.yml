@@ -21,7 +21,7 @@
     copy: 
       remote_src: yes
       dest: /var/www/http
-      src: ~/ws/interview/devops-task/src 
+      src: ./ws/interview/devops-task/src 
   - name: Restart service httpd, in all cases
     service:
       name: httpd
