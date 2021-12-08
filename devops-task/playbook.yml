@@ -13,7 +13,7 @@
       state: latest
   - name: "Git checkout"
     ansible.builtin.git: 
-      dest: "./"
+      dest: "./ws/"
       repo: "https://github.com/ronaksuchak/interview.git"
       update: false
     name: "Git checkout"
