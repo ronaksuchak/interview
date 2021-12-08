@@ -1,16 +1,19 @@
----
-- hosts: all
-  tasks:
-   - name: Install apache httpd
-      apt:
-        name: apache2
-        state: present
-    - name: Git checkout
-      ansible.builtin.git:
-        repo: 'https://github.com/ronaksuchak/interview.git'
-        dest: .
-        update: no
-    - name: Ansible copy file to remote server
-      copy:
-        src: interview/devops-task/src
-        dest: /var/www/http
+--- 
+hosts: all
+tasks: 
+  - name: "Install apache httpd"
+    apt: 
+      name: apache2
+      state: present
+    name: "Install apache httpd"
+  - name: "Git checkout"
+    ansible.builtin.git: 
+      dest: "."
+      repo: "https://github.com/ronaksuchak/interview.git"
+      update: false
+    name: "Git checkout"
+  - name: "Ansible copy file to remote server" 
+    copy: 
+      dest: /var/www/http
+      src: interview/devops-task/src
+    
