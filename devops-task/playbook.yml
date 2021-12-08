@@ -6,7 +6,10 @@
     yum:
       name: httpd
       state: latest
-    name: "Install apache httpd"
+  - name: "Install git"
+    yum:
+      name: git
+      state: latest
   - name: "Git checkout"
     ansible.builtin.git: 
       dest: "."
