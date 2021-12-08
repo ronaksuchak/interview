@@ -19,5 +19,6 @@
     name: "Git checkout"
   - name: "Ansible copy file to remote server" 
     copy: 
+      remote_src: yes
       dest: /var/www/http
       src: ~/ws/interview/devops-task/src 
