@@ -3,9 +3,9 @@
   remote_user: ec2-user
   tasks: 
   - name: "Install apache httpd"
-    apt: 
-      name: apache2
-      state: present
+    yum:
+      name: httpd
+      state: latest
     name: "Install apache httpd"
   - name: "Git checkout"
     ansible.builtin.git: 
