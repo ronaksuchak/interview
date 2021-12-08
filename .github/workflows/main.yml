@@ -40,7 +40,3 @@ jobs:
           inventory: |
             [all]
             13.233.236.101
-
-          # Optional, galaxy requirements filepath
-          requirements: galaxy-requirements.yml
-          # Optional, additional flags to pass to ansible-playbook
