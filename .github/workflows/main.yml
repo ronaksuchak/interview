@@ -24,6 +24,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install software-properties-common
+          pip install python-apt
           sudo add-apt-repository --yes --update ppa:ansible/ansible
           sudo apt install ansible
       - name: change permission
