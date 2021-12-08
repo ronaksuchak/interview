@@ -20,8 +20,8 @@
   - name: "Ansible copy file to remote server" 
     copy: 
       remote_src: yes
-      dest: /var/www/http
-      src: ./ws/interview/devops-task/src 
+      dest: /var/www/http/
+      src: /home/ec2-user/ws/devops-task/src/ 
   - name: Restart service httpd, in all cases
     service:
       name: httpd
